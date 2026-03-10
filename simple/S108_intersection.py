@@ -1,0 +1,14 @@
+# -----------------------------
+# 题目：两个数组的交集。
+# 描述：求两个数组的交集。
+# -----------------------------
+
+def intersection(nums1, nums2):
+    return list(set(nums1) & set(nums2))
+
+def main():
+    print(f"交集: {intersection([1,2,2,1], [2,2])}")
+
+
+if __name__ == "__main__":
+    main()
