@@ -1,64 +1,90 @@
 # -----------------------------
-# 题目：实现简单的任务调度器。
+# 题目：实现任务调度器。
 # -----------------------------
 
 import time
 import threading
-from datetime import datetime
-from collections import deque
+from datetime import datetime, timedelta
+from collections import defaultdict
 
 class Task:
-    def __init__(self, task_id, func, args=(), delay=0):
-        self.task_id = task_id
+    def __init__(self, name, func, interval=None, at_time=None):
+        self.name = name
         self.func = func
-        self.args = args
-        self.delay = delay
-        self.execute_time = time.time() + delay
+        self.interval = interval
+        self.at_time = at_time
+        self.last_run = None
+        self.next_run = None
+    
+    def should_run(self):
+        now = datetime.now()
+        if self.next_run is None:
+            if self.at_time:
+                hour, minute = map(int, self.at_time.split(':'))
+                self.next_run = now.replace(hour=hour, minute=minute, second=0, microsecond=0)
+                if self.next_run <= now:
+                    self.next_run += timedelta(days=1)
+            elif self.interval:
+                self.next_run = now
+            return True
+        return now >= self.next_run
+    
+    def run(self):
+        try:
+            self.func()
+            self.last_run = datetime.now()
+            if self.interval:
+                self.next_run = self.last_run + timedelta(seconds=self.interval)
+            elif self.at_time:
+                self.next_run += timedelta(days=1)
+        except Exception as e:
+            print(f"Task {self.name} failed: {e}")
 
 class TaskScheduler:
     def __init__(self):
-        self.tasks = []
+        self.tasks = {}
         self.running = False
+        self.thread = None
         self.lock = threading.Lock()
     
     def add_task(self, task):
         with self.lock:
-            self.tasks.append(task)
-            self.tasks.sort(key=lambda t: t.execute_time)
+            self.tasks[task.name] = task
     
-    def run(self):
+    def remove_task(self, name):
+        with self.lock:
+            self.tasks.pop(name, None)
+    
+    def start(self):
         self.running = True
-        while self.running:
-            with self.lock:
-                if not self.tasks:
-                    time.sleep(0.1)
-                    continue
-                now = time.time()
-                if self.tasks[0].execute_time <= now:
-                    task = self.tasks.pop(0)
-                    try:
-                        task.func(*task.args)
-                    except Exception as e:
-                        print(f"任务执行错误: {e}")
-            time.sleep(0.1)
+        self.thread = threading.Thread(target=self._run_loop, daemon=True)
+        self.thread.start()
     
     def stop(self):
         self.running = False
+        if self.thread:
+            self.thread.join()
+    
+    def _run_loop(self):
+        while self.running:
+            with self.lock:
+                tasks_to_run = [t for t in self.tasks.values() if t.should_run()]
+            
+            for task in tasks_to_run:
+                threading.Thread(target=task.run, daemon=True).start()
+            
+            time.sleep(1)
 
-def my_task(name):
-    print(f"[{datetime.now().strftime('%H:%M:%S')}] 执行任务: {name}")
-
-def main():
-    scheduler = TaskScheduler()
-    scheduler.add_task(Task(1, my_task, ("任务A",), delay=1))
-    scheduler.add_task(Task(2, my_task, ("任务B",), delay=2))
-    scheduler.add_task(Task(3, my_task, ("任务C",), delay=0.5))
-    thread = threading.Thread(target=scheduler.run)
-    thread.start()
-    time.sleep(3)
-    scheduler.stop()
-    thread.join()
-
+def my_task():
+    print(f"Task executed at {datetime.now()}")
 
 if __name__ == "__main__":
-    main()
+    scheduler = TaskScheduler()
+    task = Task("print_time", my_task, interval=5)
+    scheduler.add_task(task)
+    scheduler.start()
+    
+    print("Scheduler running for 15 seconds...")
+    time.sleep(15)
+    scheduler.stop()
+    print("Scheduler stopped")
