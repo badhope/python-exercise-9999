@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Python练习库：从基础到实战，570+个精心设计的练习，覆盖9个难度级别">
+    <meta name="keywords" content="Python, 练习, 编程, 学习, 教程, 算法, 数据结构">
+    <meta name="author" content="badhope">
+    <meta name="theme-color" content="#3b82f6">
+    <meta property="og:title" content="Python练习库 - 从基础到实战">
+    <meta property="og:description" content="570+个精心设计的Python练习，覆盖9个难度级别">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://badhope.github.io/python-exercise-9999/">
+    <title>Python练习库 | 从基础到实战 - 570+练习</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="nav" id="nav" role="navigation" aria-label="主导航">
+        <div class="nav__container">
+            <a href="#" class="nav__brand">
+                <span class="nav__logo">🐍</span>
+                <span class="nav__title">Python练习库</span>
+            </a>
+            <button class="nav__toggle" id="navToggle" aria-label="切换导航菜单" aria-expanded="false">
+                <span class="nav__toggle-bar"></span>
+                <span class="nav__toggle-bar"></span>
+                <span class="nav__toggle-bar"></span>
+            </button>
+            <ul class="nav__menu" id="navMenu" role="menubar">
+                <li class="nav__item" role="none">
+                    <a href="#features" class="nav__link" role="menuitem">特性</a>
+                </li>
+                <li class="nav__item nav__item--dropdown" role="none">
+                    <a href="#levels" class="nav__link nav__link--dropdown" role="menuitem" aria-haspopup="true" aria-expanded="false">
+                        难度级别
+                        <svg class="nav__dropdown-icon" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true">
+                            <path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="2" fill="none"/>
+                        </svg>
+                    </a>
+                    <ul class="nav__dropdown" role="menu" aria-label="难度级别子菜单">
+                        <li role="none"><a href="#level-basics" class="nav__dropdown-link" role="menuitem">Basics 基础</a></li>
+                        <li role="none"><a href="#level-simple" class="nav__dropdown-link" role="menuitem">Simple 简单</a></li>
+                        <li role="none"><a href="#level-normal" class="nav__dropdown-link" role="menuitem">Normal 普通</a></li>
+                        <li role="none"><a href="#level-hard" class="nav__dropdown-link" role="menuitem">Hard 困难</a></li>
+                        <li role="none"><a href="#level-complex" class="nav__dropdown-link" role="menuitem">Complex 复杂</a></li>
+                        <li role="none"><a href="#level-advanced" class="nav__dropdown-link" role="menuitem">Advanced 进阶</a></li>
+                        <li role="none"><a href="#level-expert" class="nav__dropdown-link" role="menuitem">Expert 专家</a></li>
+                        <li role="none"><a href="#level-master" class="nav__dropdown-link" role="menuitem">Master 大师</a></li>
+                        <li role="none"><a href="#level-nightmare" class="nav__dropdown-link" role="menuitem">Nightmare 噩梦</a></li>
+                    </ul>
+                </li>
+                <li class="nav__item" role="none">
+                    <a href="#stats" class="nav__link" role="menuitem">统计</a>
+                </li>
+                <li class="nav__item" role="none">
+                    <a href="#download" class="nav__link" role="menuitem">下载</a>
+                </li>
+                <li class="nav__item" role="none">
+                    <a href="https://github.com/badhope/python-exercise-9999" class="nav__link nav__link--github" role="menuitem" target="_blank" rel="noopener noreferrer">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                            <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                        </svg>
+                        GitHub
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <nav class="breadcrumb" aria-label="面包屑导航">
+        <div class="breadcrumb__container">
+            <ol class="breadcrumb__list">
+                <li class="breadcrumb__item">
+                    <a href="#" class="breadcrumb__link">首页</a>
+                </li>
+                <li class="breadcrumb__item breadcrumb__item--current" aria-current="page">
+                    <span>Python练习库</span>
+                </li>
+            </ol>
+        </div>
+    </nav>
+
+    <main id="main-content">
+        <section class="hero" aria-labelledby="hero-title">
+            <div class="hero__container">
+                <div class="hero__content">
+                    <div class="hero__badge">
+                        <span class="hero__badge-icon">🚀</span>
+                        <span>570+ 练习</span>
+                    </div>
+                    <h1 id="hero-title" class="hero__title">
+                        Python练习库
+                        <span class="hero__subtitle">从基础到实战</span>
+                    </h1>
+                    <p class="hero__description">
+                        由全栈开发者构建的Python全阶段练习库，提供从基础语法到分布式系统的完整学习路径。
+                        每个文件独立可运行，包含标准实现与详细解析双版本。
+                    </p>
+                    <div class="hero__actions">
+                        <a href="#download" class="btn btn--primary btn--lg">
+                            <svg class="btn__icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                                <polyline points="7 10 12 15 17 10"/>
+                                <line x1="12" y1="15" x2="12" y2="3"/>
+                            </svg>
+                            立即下载
+                        </a>
+                        <a href="https://github.com/badhope/python-exercise-9999" class="btn btn--outline btn--lg" target="_blank" rel="noopener noreferrer">
+                            <svg class="btn__icon" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                            </svg>
+                            查看源码
+                        </a>
+                    </div>
+                </div>
+                <div class="hero__visual">
+                    <div class="hero__code-window">
+                        <div class="hero__code-header">
+                            <span class="hero__code-dot hero__code-dot--red"></span>
+                            <span class="hero__code-dot hero__code-dot--yellow"></span>
+                            <span class="hero__code-dot hero__code-dot--green"></span>
+                            <span class="hero__code-title">hello_world.py</span>
+                        </div>
+                        <pre class="hero__code"><code><span class="code-comment"># Python练习库 - 从基础到实战</span>
+<span class="code-keyword">print</span>(<span class="code-string">"Hello, Python!"</span>)
+
+<span class="code-comment"># 570+ 练习等你来挑战</span>
+<span class="code-keyword">for</span> level <span class="code-keyword">in</span> [<span class="code-string">"Basics"</span>, <span class="code-string">"Simple"</span>, <span class="code-string">"Normal"</span>,
+              <span class="code-string">"Hard"</span>, <span class="code-string">"Complex"</span>, <span class="code-string">"Advanced"</span>,
+              <span class="code-string">"Expert"</span>, <span class="code-string">"Master"</span>, <span class="code-string">"Nightmare"</span>]:
+    <span class="code-keyword">print</span>(<span class="code-string">f"🎯 </span>{level}<span class="code-string">"</span>)</code></pre>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="features" class="features" aria-labelledby="features-title">
+            <div class="container">
+                <header class="section-header">
+                    <h2 id="features-title" class="section-header__title">核心特性</h2>
+                    <p class="section-header__subtitle">为什么选择这个练习库？</p>
+                </header>
+                <div class="features__grid">
+                    <article class="feature-card">
+                        <div class="feature-card__icon">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+                                <path d="M2 17l10 5 10-5"/>
+                                <path d="M2 12l10 5 10-5"/>
+                            </svg>
+                        </div>
+                        <h3 class="feature-card__title">渐进式学习</h3>
+                        <p class="feature-card__description">9个难度级别，从Hello World到分布式系统，循序渐进掌握Python编程</p>
+                    </article>
+                    <article class="feature-card">
+                        <div class="feature-card__icon">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="16 18 22 12 16 6"/>
+                                <polyline points="8 6 2 12 8 18"/>
+                            </svg>
+                        </div>
+                        <h3 class="feature-card__title">独立可运行</h3>
+                        <p class="feature-card__description">每个练习文件独立可运行，无需额外配置，即开即学</p>
+                    </article>
+                    <article class="feature-card">
+                        <div class="feature-card__icon">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                                <polyline points="14 2 14 8 20 8"/>
+                                <line x1="16" y1="13" x2="8" y2="13"/>
+                                <line x1="16" y1="17" x2="8" y2="17"/>
+                                <polyline points="10 9 9 9 8 9"/>
+                            </svg>
+                        </div>
+                        <h3 class="feature-card__title">详细解析</h3>
+                        <p class="feature-card__description">包含标准实现与详细解析双版本，适合不同水平的学习者</p>
+                    </article>
+                    <article class="feature-card">
+                        <div class="feature-card__icon">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                                <polyline points="22 4 12 14.01 9 11.01"/>
+                            </svg>
+                        </div>
+                        <h3 class="feature-card__title">测试覆盖</h3>
+                        <p class="feature-card__description">配套完整的pytest测试用例，覆盖正常、边界、错误场景</p>
+                    </article>
+                    <article class="feature-card">
+                        <div class="feature-card__icon">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="10"/>
+                                <line x1="2" y1="12" x2="22" y2="12"/>
+                                <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+                            </svg>
+                        </div>
+                        <h3 class="feature-card__title">实战导向</h3>
+                        <p class="feature-card__description">紧密贴合实际应用场景，从业务系统到分布式架构全覆盖</p>
+                    </article>
+                    <article class="feature-card">
+                        <div class="feature-card__icon">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                                <circle cx="9" cy="7" r="4"/>
+                                <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+                                <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                            </svg>
+                        </div>
+                        <h3 class="feature-card__title">开源免费</h3>
+                        <p class="feature-card__description">MIT协议开源，欢迎Star、Fork，社区共建学习资源</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section id="stats" class="stats" aria-labelledby="stats-title">
+            <div class="container">
+                <header class="section-header">
+                    <h2 id="stats-title" class="section-header__title">项目统计</h2>
+                    <p class="section-header__subtitle">数据驱动的学习路径</p>
+                </header>
+                <div class="stats__grid">
+                    <div class="stat-card">
+                        <div class="stat-card__number" data-count="570">0</div>
+                        <div class="stat-card__label">练习总数</div>
+                        <div class="stat-card__icon">📝</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-card__number" data-count="9">0</div>
+                        <div class="stat-card__label">难度级别</div>
+                        <div class="stat-card__icon">🎯</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-card__number" data-count="50">0</div>
+                        <div class="stat-card__label">设计模式</div>
+                        <div class="stat-card__icon">🏗️</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-card__number" data-count="100">0</div>
+                        <div class="stat-card__suffix">%</div>
+                        <div class="stat-card__label">开源免费</div>
+                        <div class="stat-card__icon">💚</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="levels" class="levels" aria-labelledby="levels-title">
+            <div class="container">
+                <header class="section-header">
+                    <h2 id="levels-title" class="section-header__title">难度级别</h2>
+                    <p class="section-header__subtitle">9个等级，渐进式学习路径</p>
+                </header>
+                <div class="levels__grid">
+                    <article id="level-basics" class="level-card level-card--basics">
+                        <div class="level-card__header">
+                            <span class="level-card__badge">Lv.1</span>
+                            <h3 class="level-card__title">Basics 基础</h3>
+                        </div>
+                        <div class="level-card__count">90 个练习</div>
+                        <p class="level-card__description">起点。Hello World，变量，print。基础语法，变量类型，输入输出。</p>
+                        <ul class="level-card__skills">
+                            <li>数据类型与运算符</li>
+                            <li>控制流与循环</li>
+                            <li>函数与类基础</li>
+                            <li>文件操作与异常处理</li>
+                        </ul>
+                    </article>
+                    <article id="level-simple" class="level-card level-card--simple">
+                        <div class="level-card__header">
+                            <span class="level-card__badge">Lv.2</span>
+                            <h3 class="level-card__title">Simple 简单</h3>
+                        </div>
+                        <div class="level-card__count">136 个练习</div>
+                        <p class="level-card__description">上手。写一些只有十几行的逻辑。条件判断，循环，基础算法逻辑。</p>
+                        <ul class="level-card__skills">
+                            <li>基础算法实现</li>
+                            <li>排序与查找</li>
+                            <li>递归与回溯</li>
+                            <li>链表与二叉树</li>
+                        </ul>
+                    </article>
+                    <article id="level-normal" class="level-card level-card--normal">
+                        <div class="level-card__header">
+                            <span class="level-card__badge">Lv.3</span>
+                            <h3 class="level-card__title">Normal 普通</h3>
+                        </div>
+                        <div class="level-card__count">50 个练习</div>
+                        <p class="level-card__description">日常。开始用函数封装，处理文件。函数，文件读写，模块化思维。</p>
+                        <ul class="level-card__skills">
+                            <li>函数封装设计</li>
+                            <li>文件读写操作</li>
+                            <li>模块化开发</li>
+                            <li>小型应用开发</li>
+                        </ul>
+                    </article>
+                    <article id="level-hard" class="level-card level-card--hard">
+                        <div class="level-card__header">
+                            <span class="level-card__badge">Lv.4</span>
+                            <h3 class="level-card__title">Hard 困难</h3>
+                        </div>
+                        <div class="level-card__count">50 个练习</div>
+                        <p class="level-card__description">爬坡。引入面向对象（OOP）。类与对象，继承，封装，多态。</p>
+                        <ul class="level-card__skills">
+                            <li>类与对象设计</li>
+                            <li>继承与多态</li>
+                            <li>封装与抽象</li>
+                            <li>业务系统开发</li>
+                        </ul>
+                    </article>
+                    <article id="level-complex" class="level-card level-card--complex">
+                        <div class="level-card__header">
+                            <span class="level-card__badge">Lv.5</span>
+                            <h3 class="level-card__title">Complex 复杂</h3>
+                        </div>
+                        <div class="level-card__count">50 个练习</div>
+                        <p class="level-card__description">架构。多模块协作，异常处理。异常捕获，多文件协作，数据库连接。</p>
+                        <ul class="level-card__skills">
+                            <li>设计模式实现</li>
+                            <li>多模块协作</li>
+                            <li>异常处理架构</li>
+                            <li>数据库集成</li>
+                        </ul>
+                    </article>
+                    <article id="level-advanced" class="level-card level-card--advanced">
+                        <div class="level-card__header">
+                            <span class="level-card__badge">Lv.6</span>
+                            <h3 class="level-card__title">Advanced 进阶</h3>
+                        </div>
+                        <div class="level-card__count">50 个练习</div>
+                        <p class="level-card__description">深入。使用外部库，网络请求。requests, pandas, GUI, 数据可视化。</p>
+                        <ul class="level-card__skills">
+                            <li>异步编程</li>
+                            <li>依赖注入</li>
+                            <li>ORM实现</li>
+                            <li>缓存与路由</li>
+                        </ul>
+                    </article>
+                    <article id="level-expert" class="level-card level-card--expert">
+                        <div class="level-card__header">
+                            <span class="level-card__badge">Lv.7</span>
+                            <h3 class="level-card__title">Expert 专家</h3>
+                        </div>
+                        <div class="level-card__count">50 个练习</div>
+                        <p class="level-card__description">专业。代码规范，完善工具。CLI工具，代码规范，健壮性设计。</p>
+                        <ul class="level-card__skills">
+                            <li>元编程技术</li>
+                            <li>AST解析</li>
+                            <li>代码生成</li>
+                            <li>AOP框架</li>
+                        </ul>
+                    </article>
+                    <article id="level-master" class="level-card level-card--master">
+                        <div class="level-card__header">
+                            <span class="level-card__badge">Lv.8</span>
+                            <h3 class="level-card__title">Master 大师</h3>
+                        </div>
+                        <div class="level-card__count">50 个练习</div>
+                        <p class="level-card__description">掌控。从零构建完整系统。Web后端，数据分析工具，系统架构。</p>
+                        <ul class="level-card__skills">
+                            <li>事件溯源</li>
+                            <li>CQRS架构</li>
+                            <li>Saga模式</li>
+                            <li>熔断器设计</li>
+                        </ul>
+                    </article>
+                    <article id="level-nightmare" class="level-card level-card--nightmare">
+                        <div class="level-card__header">
+                            <span class="level-card__badge">Lv.9</span>
+                            <h3 class="level-card__title">Nightmare 噩梦</h3>
+                        </div>
+                        <div class="level-card__count">50 个练习</div>
+                        <p class="level-card__description">终极挑战。开发完整分布式系统。Raft共识，分布式KV，MapReduce。</p>
+                        <ul class="level-card__skills">
+                            <li>Raft共识算法</li>
+                            <li>分布式KV存储</li>
+                            <li>消息队列系统</li>
+                            <li>MapReduce框架</li>
+                        </ul>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section id="download" class="download" aria-labelledby="download-title">
+            <div class="container">
+                <header class="section-header">
+                    <h2 id="download-title" class="section-header__title">获取资源</h2>
+                    <p class="section-header__subtitle">选择适合你的方式开始学习</p>
+                </header>
+                <div class="download__grid">
+                    <article class="download-card">
+                        <div class="download-card__icon">
+                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                                <polyline points="7 10 12 15 17 10"/>
+                                <line x1="12" y1="15" x2="12" y2="3"/>
+                            </svg>
+                        </div>
+                        <h3 class="download-card__title">下载ZIP</h3>
+                        <p class="download-card__description">下载完整项目压缩包，离线学习</p>
+                        <button class="btn btn--primary btn--lg download-btn" data-download="zip" aria-label="下载ZIP压缩包">
+                            <svg class="btn__icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                                <polyline points="7 10 12 15 17 10"/>
+                                <line x1="12" y1="15" x2="12" y2="3"/>
+                            </svg>
+                            下载 ZIP
+                        </button>
+                        <div class="download-card__progress" hidden>
+                            <div class="download-card__progress-bar"></div>
+                        </div>
+                        <div class="download-card__status" hidden></div>
+                    </article>
+                    <article class="download-card">
+                        <div class="download-card__icon">
+                            <svg width="48" height="48" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                            </svg>
+                        </div>
+                        <h3 class="download-card__title">克隆仓库</h3>
+                        <p class="download-card__description">使用Git克隆获取最新代码</p>
+                        <div class="download-card__code">
+                            <code id="gitClone">git clone https://github.com/badhope/python-exercise-9999.git</code>
+                            <button class="btn btn--icon copy-btn" data-copy="gitClone" aria-label="复制克隆命令">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <rect x="9" y="9" width="13" height="13" rx="2" ry="2"/>
+                                    <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/>
+                                </svg>
+                            </button>
+                        </div>
+                    </article>
+                    <article class="download-card">
+                        <div class="download-card__icon">
+                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="10"/>
+                                <polygon points="10 8 16 12 10 16 10 8"/>
+                            </svg>
+                        </div>
+                        <h3 class="download-card__title">在线浏览</h3>
+                        <p class="download-card__description">在GitHub上直接查看源代码</p>
+                        <a href="https://github.com/badhope/python-exercise-9999" class="btn btn--outline btn--lg" target="_blank" rel="noopener noreferrer">
+                            <svg class="btn__icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+                                <polyline points="15 3 21 3 21 9"/>
+                                <line x1="10" y1="14" x2="21" y2="3"/>
+                            </svg>
+                            打开 GitHub
+                        </a>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="usage" aria-labelledby="usage-title">
+            <div class="container">
+                <header class="section-header">
+                    <h2 id="usage-title" class="section-header__title">如何使用</h2>
+                    <p class="section-header__subtitle">快速开始你的学习之旅</p>
+                </header>
+                <div class="usage__steps">
+                    <div class="usage-step">
+                        <div class="usage-step__number">1</div>
+                        <div class="usage-step__content">
+                            <h3 class="usage-step__title">按需学习</h3>
+                            <p class="usage-step__description">根据你的当前水平选择合适的难度级别开始学习。建议从Basics模块开始，循序渐进。</p>
+                        </div>
+                    </div>
+                    <div class="usage-step">
+                        <div class="usage-step__number">2</div>
+                        <div class="usage-step__content">
+                            <h3 class="usage-step__title">先想后看</h3>
+                            <p class="usage-step__description">强烈建议先尝试自己编写，卡住时再查看标准实现，理解后再阅读详细解析加深印象。</p>
+                        </div>
+                    </div>
+                    <div class="usage-step">
+                        <div class="usage-step__number">3</div>
+                        <div class="usage-step__content">
+                            <h3 class="usage-step__title">动手实践</h3>
+                            <p class="usage-step__description">每个练习都是可运行的，建议实际运行代码并尝试修改。同时运行测试用例验证代码正确性。</p>
+                        </div>
+                    </div>
+                    <div class="usage-step">
+                        <div class="usage-step__number">4</div>
+                        <div class="usage-step__content">
+                            <h3 class="usage-step__title">扩展挑战</h3>
+                            <p class="usage-step__description">尝试修改代码实现更多功能，或添加新的测试用例。挑战更高难度级别。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer" role="contentinfo">
+        <div class="footer__container">
+            <div class="footer__content">
+                <div class="footer__brand">
+                    <span class="footer__logo">🐍</span>
+                    <span class="footer__title">Python练习库</span>
+                </div>
+                <p class="footer__description">
+                    由全栈开发者构建的Python全阶段练习库，提供从基础语法到分布式系统的完整学习路径。
+                </p>
+            </div>
+            <div class="footer__links">
+                <div class="footer__section">
+                    <h4 class="footer__section-title">快速链接</h4>
+                    <ul class="footer__list">
+                        <li><a href="#features" class="footer__link">核心特性</a></li>
+                        <li><a href="#levels" class="footer__link">难度级别</a></li>
+                        <li><a href="#download" class="footer__link">下载资源</a></li>
+                    </ul>
+                </div>
+                <div class="footer__section">
+                    <h4 class="footer__section-title">资源</h4>
+                    <ul class="footer__list">
+                        <li><a href="https://github.com/badhope/python-exercise-9999" class="footer__link" target="_blank" rel="noopener noreferrer">GitHub仓库</a></li>
+                        <li><a href="https://github.com/badhope/python-exercise-9999/issues" class="footer__link" target="_blank" rel="noopener noreferrer">问题反馈</a></li>
+                        <li><a href="https://github.com/badhope/python-exercise-9999/blob/main/LICENSE" class="footer__link" target="_blank" rel="noopener noreferrer">开源协议</a></li>
+                    </ul>
+                </div>
+                <div class="footer__section">
+                    <h4 class="footer__section-title">关于作者</h4>
+                    <ul class="footer__list">
+                        <li><a href="https://github.com/badhope" class="footer__link" target="_blank" rel="noopener noreferrer">badhope</a></li>
+                        <li><span class="footer__text">数据科学与大数据技术</span></li>
+                        <li><span class="footer__text">个人全栈开发者</span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer__bottom">
+            <div class="footer__container">
+                <p class="footer__copyright">
+                    &copy; 2026 badhope. MIT License. 仅供学习交流使用。
+                </p>
+                <p class="footer__motto">
+                    代码是写给人看的，顺便给机器运行。
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <button class="back-to-top" id="backToTop" aria-label="返回顶部" hidden>
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="18 15 12 9 6 15"/>
+        </svg>
+    </button>
+
+    <div class="toast" id="toast" role="alert" aria-live="polite" hidden>
+        <span class="toast__message"></span>
+    </div>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
